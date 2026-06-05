@@ -1,0 +1,42 @@
+import Interfaces.reporVisitor;
+
+public class VisitoI implements reporVisitor {
+
+	@Override
+	public void visitar(Mago mago) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double visitar(Hechizo hechizo) {
+		return 0;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double visitar(Fuego Hechizofuego) {
+		// TODO Auto-generated method stub
+		return Fuego.getDaño()*Fuego.getDuracionQuemadura();
+	}
+
+	@Override
+	public double visitar(Agua Hechizoagua) {
+		// TODO Auto-generated method stub
+		return (Agua.getDaño() + Agua.getCantidadHeal() + Agua.getPresionDelAgua())*2;
+	}
+
+	@Override
+	public double visitar(Planta Hechizoplanta) {
+		// TODO Auto-generated method stub
+		return (Planta.getDaño() + (Planta.getDuracionStun()* Planta.getCantPlantas()));
+	}
+
+	@Override
+	public double visitar(Tierra Hechizotierra) {
+		// TODO Auto-generated method stub
+		return (Tierra.getDaño()*Tierra.getMejoraDefensa())/2;
+	}
+	
+}
