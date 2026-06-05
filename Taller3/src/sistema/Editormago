@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+import Dominio.Mago;
+
+public class Editormago {
+	private ArrayList<Mago> listaMagos= new ArrayList <>(); 
+	
+	public void guardarMago() {
+		reporVisitor save = new VisitoI();
+		
+		for(Mago m:listaMagos) {
+			m.accept(save);
+		}
+		
+	}
+
+}
