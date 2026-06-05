@@ -1,4 +1,4 @@
-import modelo.
+import modelo.HechizoAgua;
 
 //Systema implm simil
 public interface reporVisitor  {
