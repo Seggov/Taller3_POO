@@ -1,3 +1,4 @@
+package interface;
 import modelo.HechizoAgua;
 
 //Systema implm simil
