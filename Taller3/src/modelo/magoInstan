@@ -1,0 +1,21 @@
+pack modelo;
+
+import java.util.ArrayList;
+
+import Lógica.reporVisitor;
+
+public class magoInstan extends Mago{
+
+	public magoInstan(String nombremago, ArrayList<String> hechizonombre) {
+		super(nombremago, hechizonombre);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void accept(reporVisitor save) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
