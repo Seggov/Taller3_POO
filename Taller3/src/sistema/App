@@ -23,7 +23,7 @@ public class App {
 		System.out.print("Seleccione menu:");
 		int opcion = scanner.nextInt();
 		
-		while (opcion<1 && 2<opcion) {
+		while (opcion<1 || opcion>2) {
 			System.out.println("Elección incorrecta.Intente denuevo.");
 			System.out.println("Menú: ");
 			System.out.println();
