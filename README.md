@@ -122,4 +122,4 @@ data/Magos.txt
 ```
 
 Estos archivos deben mantenerse en la raiz del proyecto dentro de la carpeta `data`, ya que el programa los carga y actualiza durante la ejecucion.
-```
+
