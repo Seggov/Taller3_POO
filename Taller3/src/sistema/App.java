@@ -1,20 +1,19 @@
 
 package sistema;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import Dominio.Mago;
 
 
 
 
 public class App {
-	private static Systema sys= new SystemaImpl();
+	
 	
 	public static void main(String[] args) throws IOException {
+		
+		
 		Scanner scanner= new Scanner(System.in);
 		System.out.println("Menú: ");
 		System.out.println();
@@ -24,7 +23,7 @@ public class App {
 		System.out.print("Seleccione menu:");
 		int opcion = scanner.nextInt();
 		
-		while (opcion<1 || opcion>2) {
+		while (opcion<1 && 2<opcion) {
 			System.out.println("Elección incorrecta.Intente denuevo.");
 			System.out.println("Menú: ");
 			System.out.println();
@@ -36,55 +35,16 @@ public class App {
 		}
 		
 		if(opcion ==1) {
-			Scanner scan= new Scanner(System.in);
-			System.out.println("Menú Administrador:");
-			System.out.println();
-			System.out.println("1. Agregar Mago");
-			System.out.println("2. Modificar Mago");
-			System.out.println("3. Eliminar Mago");
-			System.out.println("4. Agregar Hechizo");
-			System.out.println("5. Modificar Hechizo");
-			System.out.println("6. Eliminar Hechizo");
-			System.out.println();
+			Admisnistrador admin=new Admisnistrador();
+			admin.menuAdmin();
 			
-			System.out.print("Sleccione opción: ");
-			int eleccion=scan.nextInt();
-			System.out.println();
 			
-			switch(eleccion) {
-			case 1:
-				agregarMagos();
-				break;
-			
-			case 2:
-				modificarMago();
-				break;
-				
-			case 3:
-				eliminarMago();
-				break;
-				
-			case 4:
-				break;
-			
-			case 5:
-				break;
-				
-			case 6:
-				break;
-			}
-			scan.close();
 			
 		}else {
 			if(opcion == 2) {
-				System.out.println("Menú Análisis:");
-				System.out.println();
-				System.out.println("1. Top 10 Mejores Hechizos");
-				System.out.println("2. Top 3 Mejores Magos");
-				System.out.println("3. Mostrar todos los Hechizos");
-				System.out.println("4. Mostrar todos los magos");
-				System.out.println("5. Mostrar todos los Hechizos junto a su puntuacion");
-				System.out.println("6. Mostrar todos los magos junto a su puntuacion");
+				Analista analis=new Analista();
+				analis.menuAnalista();
+				
 			}
 		}
 		
@@ -92,32 +52,6 @@ public class App {
 		scanner.close();
 	}
 
-	private static void modificarMago() throws IOException {
-		// TODO Auto-generated method stub
-		sys.modificarMago(null);
-		
-	}
-
-	private static void eliminarMago() throws IOException {
-		// TODO Auto-generated method stub
-		Scanner scan= new Scanner(System.in);
-		System.out.print("Agregue magos que desea eliminar: ");
-		String Nombre= scan.nextLine();
-		sys.eliminarMago( Nombre);
-	}
-
-	private static void agregarMagos() throws IOException {
-		// TODO Auto-generated method stub
-		leerArchivo();
-		sys.agregarMago();
-			
-	}
-
-	private static void leerArchivo() throws FileNotFoundException {
-		// TODO Auto-generated method stub
-		sys.leerArchivo(null);
-		
-	}
 	
 	
 
