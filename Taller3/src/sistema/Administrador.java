@@ -45,14 +45,27 @@ public class Admisnistrador {
 			break;
 			
 		case 6:
+			eliminarHechizo();
 			break;
 		}
 		scan.close();
 		
 	}
 	
-	private static void modificarHechizo() {
+	private void eliminarHechizo() throws IOException {
 		// TODO Auto-generated method stub
+		Scanner acanner=new Scanner(System.in);
+		System.out.println();
+		System.out.print("Ingrese el nombre del hechizo a eliminar= ");
+		String hechizoselectEliminar=acanner.nextLine();
+		sys.eliminarHechizo(hechizoselectEliminar);
+		acanner.close();
+		
+	}
+
+	private static void modificarHechizo() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		sys.modificarHechizo();
 		
 	}
 
