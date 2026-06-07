@@ -1,5 +1,13 @@
 # Taller 3 POO - Magos y Hechizos
 
+---
+
+**Valentina Castillo** -151666922 - Ingeniería en Tecnologías de la Información
+
+**Pedro Segovia** - 21672694-4 - Ingeniería en Tecnologías de la Información
+
+---
+
 Proyecto desarrollado para el Taller 3 de Programacion Avanzada.
 
 El sistema permite administrar magos y hechizos mediante archivos de texto, calcular puntuaciones segun el tipo de hechizo y generar reportes para un panel de analista.
