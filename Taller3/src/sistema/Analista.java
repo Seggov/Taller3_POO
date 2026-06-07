@@ -1,4 +1,4 @@
-package Lógica;
+package sistema;
 
 public class Analista {
 	private static Systema sys= new SystemaImpl();
