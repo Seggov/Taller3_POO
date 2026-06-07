@@ -1,39 +1,16 @@
-package modelo;
+﻿package modelo;
 
-public class Agua extends Hechizo {
-	private static double cantidadHeal;
-	private static double presionDelAgua;
+import strategy.EstrategiaAgua;
 
-	public Agua(String nombrehechizo, String tipohechizo, double daño,int cantidadheal,int presiondelagua) {
-		super(nombrehechizo, tipohechizo, daño);
-		// TODO Auto-generated constructor stub
-		this.cantidadHeal=cantidadheal;
-		this.presionDelAgua=presiondelagua;
-	}
+public class HechizoAgua extends Hechizo {
 
-	public static double getCantidadHeal() {
-		return cantidadHeal;
-	}
+    public HechizoAgua(String nombre, int dano, int cantidadHeal, int presionAgua) {
+        super(nombre, "Agua", dano, cantidadHeal, presionAgua, new EstrategiaAgua());
+    }
 
-	public static double getPresionDelAgua() {
-		return presionDelAgua;
-	}
-
-	public void setCantidadHeal(int cantidadHeal) {
-		this.cantidadHeal = cantidadHeal;
-	}
-
-	public void setPresionDelAgua(int presionDelAgua) {
-		this.presionDelAgua = presionDelAgua;
-	}
-	
-
-	@Override
-	public double  accept(VisitoI visitor) {
-		// TODO Auto-generated method stub
-		return visitor.visitar(this);
-		
-	}
-
+    @Override
+    public String obtenerDescripcionParametros() {
+        return "Cantidad heal: " + getPrimerParametro() + ", Presion agua: " + getSegundoParametro();
+    }
 }
 

@@ -1,29 +1,16 @@
-package modelo;
+﻿package modelo;
 
-public class Tierra extends Hechizo{
-	private static double mejoraDefensa;
+import strategy.EstrategiaTierra;
 
-	public Tierra(String nombrehechizo, String tipohechizo, double daño,int mejoradefensa) {
-		super(nombrehechizo, tipohechizo, daño);
-		// TODO Auto-generated constructor stub
-		this.mejoraDefensa=mejoradefensa;
-	}
+public class HechizoTierra extends Hechizo {
 
-	public static double getMejoraDefensa() {
-		return mejoraDefensa;
-	}
+    public HechizoTierra(String nombre, int dano, int mejoraDefensa) {
+        super(nombre, "Tierra", dano, mejoraDefensa, 0, new EstrategiaTierra());
+    }
 
-	public void setMejoraDefensa(double mejoraDefensa) {
-		this.mejoraDefensa = mejoraDefensa;
-	}
-	
-
-	@Override
-	public double accept(VisitoI visitor) {
-		// TODO Auto-generated method stub
-		return visitor.visitar(this);
-		
-	}
-
+    @Override
+    public String obtenerDescripcionParametros() {
+        return "Mejora defensa: " + getPrimerParametro();
+    }
 }
 
