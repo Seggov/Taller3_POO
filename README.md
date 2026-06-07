@@ -1,4 +1,3 @@
-```md
 # Taller 3 POO - Magos y Hechizos
 
 Proyecto desarrollado para el Taller 3 de Programacion Avanzada.
@@ -17,7 +16,7 @@ Al crear o importar el proyecto en Eclipse, se recomienda usar el siguiente nomb
 
 ```text
 Taller3
-```
+
 
 ## Estructura esperada
 
