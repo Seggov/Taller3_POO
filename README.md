@@ -1,34 +1,34 @@
 # Taller 3 POO - Magos y Hechizos
 
----
+## Integrantes
 
-**Valentina Castillo** -151666922 - Ingeniería en Tecnologías de la Información
+- Valentina Castillo - 15166692-2 - Ingenieria en Tecnologias de la Informacion
+- Pedro Segovia - 21672694-4 - Ingenieria en Tecnologias de la Informacion
 
-**Pedro Segovia** - 21672694-4 - Ingeniería en Tecnologías de la Información
+## Descripcion del proyecto
 
----
+Este proyecto corresponde al Taller 3 de Programacion Avanzada.
 
-Proyecto desarrollado para el Taller 3 de Programacion Avanzada.
+El sistema permite administrar magos y hechizos mediante archivos de texto. Cada mago posee uno o mas hechizos, y cada hechizo pertenece a un tipo elemental: Fuego, Tierra, Planta o Agua.
 
-El sistema permite administrar magos y hechizos mediante archivos de texto, calcular puntuaciones segun el tipo de hechizo y generar reportes para un panel de analista.
+El programa permite calcular puntuaciones de hechizos segun su tipo y calcular la puntuacion total de cada mago sumando los puntajes de los hechizos que domina.
 
 ## Importante sobre la entrega
 
-En este repositorio se subio principalmente la carpeta con las clases fuente del proyecto, ya que GitHub no permite subir correctamente la carpeta `bin` generada por Eclipse.
+En este repositorio se suben las clases fuente del proyecto y los archivos necesarios para su ejecucion.
 
-La carpeta `bin` no es necesaria para revisar ni ejecutar el proyecto, porque Eclipse la genera automaticamente al compilar.
+No se incluye la carpeta `bin`, ya que esta es generada automaticamente por Eclipse al compilar el proyecto.
 
-## Nombre del proyecto
+## Nombre recomendado del proyecto
 
-Al crear o importar el proyecto en Eclipse, se recomienda usar el siguiente nombre:
+Al crear el proyecto en Eclipse, se recomienda usar el siguiente nombre:
 
-```text
 Taller3
 
 
-## Estructura esperada
+## Estructura del proyecto
 
-El proyecto debe quedar con una estructura similar a esta:
+La estructura esperada del proyecto es la siguiente:
 
 ```text
 Taller3
@@ -47,13 +47,29 @@ Taller3
 └── Modelo_Dominio.pdf
 ```
 
+## Paquetes principales
+
+- `main`: contiene la clase principal que inicia el programa.
+- `vista`: contiene el menu de consola y la interaccion con el usuario.
+- `servicio`: contiene la logica principal del sistema.
+- `modelo`: contiene las clases del dominio, como magos y hechizos.
+- `persistencia`: contiene la lectura y escritura de archivos `.txt`.
+- `factory`: contiene la fabrica encargada de crear hechizos segun su tipo.
+- `strategy`: contiene las estrategias de calculo de puntuacion.
+
 ## Como ejecutar en Eclipse
 
 1. Abrir Eclipse.
-2. Crear un nuevo proyecto Java con el nombre `Taller3`.
+2. Crear un nuevo proyecto Java llamado `Taller3`.
 3. Copiar la carpeta `src` dentro del proyecto.
 4. Copiar la carpeta `data` en la raiz del proyecto, al mismo nivel que `src`.
-5. Verificar que los archivos `Hechizos.txt` y `Magos.txt` esten dentro de `data`.
+5. Verificar que existan los archivos:
+
+```text
+data/Hechizos.txt
+data/Magos.txt
+```
+
 6. Abrir la clase:
 
 ```text
@@ -69,11 +85,11 @@ Run As -> Java Application
 
 ## Funcionalidades
 
-El sistema cuenta con dos paneles principales:
+El sistema cuenta con dos paneles principales: Administrador y Analista.
 
-## Administrador
+## Panel Administrador
 
-Permite realizar operaciones CRUD:
+Permite realizar las siguientes operaciones:
 
 - Agregar mago.
 - Modificar mago.
@@ -82,9 +98,9 @@ Permite realizar operaciones CRUD:
 - Modificar hechizo.
 - Eliminar hechizo.
 
-Los cambios realizados se guardan en los archivos `.txt`.
+Los cambios realizados se reflejan en los archivos `.txt`.
 
-## Analista
+## Panel Analista
 
 Permite consultar:
 
@@ -95,19 +111,36 @@ Permite consultar:
 - Todos los hechizos junto a su puntuacion.
 - Todos los magos junto a su puntuacion.
 
+## Calculo de puntuaciones
+
+Cada tipo de hechizo calcula su puntuacion de manera distinta:
+
+- Fuego: `dano * duracionQuemadura`
+- Tierra: `(dano * mejoraDefensa) / 2`
+- Planta: `dano + (duracionStun * cantidadPlantas)`
+- Agua: `(dano + cantidadHeal + presionAgua) * 2`
+
+La puntuacion de un mago se calcula sumando las puntuaciones de todos los hechizos que domina.
+
 ## Patrones de diseno utilizados
 
 ## Singleton
 
-Utilizado en la clase `SistemaTaller`, para mantener una unica instancia del sistema durante la ejecucion.
+Se utiliza en la clase `SistemaTaller`.
+
+Permite mantener una unica instancia del sistema durante toda la ejecucion.
 
 ## Factory
 
-Utilizado en la clase `HechizoFactory`, para crear el tipo correcto de hechizo segun su elemento.
+Se utiliza en la clase `HechizoFactory`.
+
+Permite crear el tipo correcto de hechizo segun el elemento ingresado o leido desde archivo.
 
 ## Strategy
 
-Utilizado mediante la interfaz `EstrategiaPuntuacion`, permitiendo calcular la puntuacion de cada hechizo segun su tipo.
+Se utiliza mediante la interfaz `EstrategiaPuntuacion`.
+
+Permite separar el calculo de puntuacion de cada tipo de hechizo en clases independientes.
 
 ## Modelo POO aplicado
 
@@ -117,17 +150,24 @@ El proyecto utiliza:
 - Encapsulamiento.
 - Herencia.
 - Interfaces.
+- Clase abstracta.
 - Colecciones con `ArrayList`.
-- Separacion entre modelo, vista, servicio y persistencia.
+- Separacion entre entrada, logica, modelo y persistencia.
 
 ## Archivos de datos
 
-El sistema utiliza los siguientes archivos:
+El sistema utiliza dos archivos principales:
 
 ```text
 data/Hechizos.txt
 data/Magos.txt
 ```
 
-Estos archivos deben mantenerse en la raiz del proyecto dentro de la carpeta `data`, ya que el programa los carga y actualiza durante la ejecucion.
+Estos archivos deben mantenerse dentro de la carpeta `data`, ubicada en la raiz del proyecto.
 
+## Diagramas
+
+El proyecto incluye:
+
+- `Diagrama_Clases.pdf`
+- `Modelo_Dominio.pdf`
