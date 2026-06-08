@@ -39,7 +39,7 @@ public abstract class Hechizo {
         return "Agua".equalsIgnoreCase(tipo) || "Planta".equalsIgnoreCase(tipo);
     }
 
-    public String getNombre() {
+    public String getNombre() {//Obtener nombre del Hechizo
         return nombre;
     }
 
@@ -47,11 +47,11 @@ public abstract class Hechizo {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
+    public String getTipo() {//Obtener tipo de Hechizo
         return tipo;
     }
 
-    public int getDano() {
+    public int getDano() {// Obtener daño del Hechizo
         return dano;
     }
 
@@ -59,7 +59,7 @@ public abstract class Hechizo {
         this.dano = dano;
     }
 
-    public int getPrimerParametro() {
+    public int getPrimerParametro() {//Obtener primer parametro 
         return primerParametro;
     }
 
@@ -67,7 +67,7 @@ public abstract class Hechizo {
         this.primerParametro = primerParametro;
     }
 
-    public int getSegundoParametro() {
+    public int getSegundoParametro() {//Obtener primer parámetro
         return segundoParametro;
     }
 
