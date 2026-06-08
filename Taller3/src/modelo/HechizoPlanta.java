@@ -9,7 +9,7 @@ public class HechizoPlanta extends Hechizo {
     }
 
     @Override
-    public String obtenerDescripcionParametros() {
+    public String obtenerDescripcionParametros() {//obtener la duraciuon de Stun y la cantidad de plantas.
         return "Duracion stun: " + getPrimerParametro() + ", Cantidad plantas: " + getSegundoParametro();
     }
 }
