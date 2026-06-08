@@ -26,7 +26,7 @@ public class Mago {
         return total;
     }
 
-    private Hechizo buscarHechizoPorNombre(List<Hechizo> catalogoHechizos, String nombreHechizo) {
+    private Hechizo buscarHechizoPorNombre(List<Hechizo> catalogoHechizos, String nombreHechizo) {//Desde la lista hechizos se busca la instancia Hechizo con el nombre. 
         for (Hechizo hechizo : catalogoHechizos) {
             if (hechizo.getNombre().equalsIgnoreCase(nombreHechizo)) {
                 return hechizo;
@@ -47,7 +47,7 @@ public class Mago {
         return builder.toString();
     }
 
-    public String getNombre() {
+    public String getNombre() {//Obtener Nombre del mago.
         return nombre;
     }
 
@@ -55,7 +55,7 @@ public class Mago {
         this.nombre = nombre;
     }
 
-    public List<String> getNombresHechizos() {
+    public List<String> getNombresHechizos() {//Obtener Nombre del hechizo
         return nombresHechizos;
     }
 
