@@ -9,7 +9,7 @@ public class HechizoFuego extends Hechizo {
     }
 
     @Override
-    public String obtenerDescripcionParametros() {
+    public String obtenerDescripcionParametros() {//Obtener el atributo de duración de quemadura
         return "Duracion quemadura: " + getPrimerParametro();
     }
 }
