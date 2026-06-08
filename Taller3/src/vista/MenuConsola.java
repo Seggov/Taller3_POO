@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import modelo.Hechizo;
+import modelo.Hechizo;//Importa las clases con las que se trabajará
 import modelo.Mago;
 import servicio.SistemaTaller;
 
 public class MenuConsola {
 
     private Scanner scanner;
-    private SistemaTaller sistema;
+    private SistemaTaller sistema;//Instancia clase
 
     public MenuConsola() {
         this.scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class MenuConsola {
     public void iniciar() {
         try {
             sistema.cargarDatos();
-            ejecutarMenuPrincipal();
+            ejecutarMenuPrincipal();//Ejecuta el metodo menu principal
         } catch (Exception exception) {
             System.out.println("Error al iniciar el sistema: " + exception.getMessage());
         }
@@ -31,7 +31,7 @@ public class MenuConsola {
     private void ejecutarMenuPrincipal() throws IOException {
         int opcion;
         do {
-            System.out.println("===== SISTEMA DE MAGOS Y HECHIZOS =====");
+            System.out.println("===== SISTEMA DE MAGOS Y HECHIZOS =====");//Menu principal para decidir cual menu usar
             System.out.println("1. Administrador");
             System.out.println("2. Analista");
             System.out.println("0. Salir");
@@ -39,23 +39,23 @@ public class MenuConsola {
 
             switch (opcion) {
                 case 1:
-                    ejecutarMenuAdministrador();
+                    ejecutarMenuAdministrador();//Acceder a menu de Administrador
                     break;
                 case 2:
-                    ejecutarMenuAnalista();
+                    ejecutarMenuAnalista();//Acceder a mené de análisis
                     break;
                 case 0:
-                    System.out.println("Saliendo del sistema...");
+                    System.out.println("Saliendo del sistema...");//Para salir del menu Principal
                     break;
                 default:
-                    System.out.println("Opcion no valida.");
+                    System.out.println("Opcion no valida.");//En caso de error
                     break;
             }
             System.out.println();
-        } while (opcion != 0);
+        } while (opcion != 0);//Para que el menú se reitere mientras opción se repita
     }
 
-    private void ejecutarMenuAdministrador() throws IOException {
+    private void ejecutarMenuAdministrador() throws IOException {//Menu administrador se muestra al usuario
         int opcion;
         do {
             System.out.println("===== ADMINISTRADOR =====");
@@ -68,7 +68,7 @@ public class MenuConsola {
             System.out.println("0. Volver");
             opcion = leerEntero("Seleccione una opcion: ");
 
-            switch (opcion) {
+            switch (opcion) {//Métodos correspondientes a distintas opciones 
                 case 1:
                     agregarMago();
                     break;
@@ -94,13 +94,13 @@ public class MenuConsola {
                     break;
             }
             System.out.println();
-        } while (opcion != 0);
+        } while (opcion != 0);//Se reitera elmenu administrador hasta que opción sea igual a 0
     }
 
     private void ejecutarMenuAnalista() {
         int opcion;
         do {
-            System.out.println("===== ANALISTA =====");
+            System.out.println("===== ANALISTA =====");//Se presenta al usuario el menú de usuario
             System.out.println("1. Top 10 Mejores Hechizos");
             System.out.println("2. Top 3 Mejores Magos");
             System.out.println("3. Mostrar todos los Hechizos");
@@ -108,9 +108,9 @@ public class MenuConsola {
             System.out.println("5. Mostrar todos los Hechizos junto a su puntuacion");
             System.out.println("6. Mostrar todos los magos junto a su puntuacion");
             System.out.println("0. Volver");
-            opcion = leerEntero("Seleccione una opcion: ");
+            opcion = leerEntero("Seleccione una opcion: ");//Se ingresa la opcion que quiere 
 
-            switch (opcion) {
+            switch (opcion) {//Se llama al metodo que  escojio el usuario 
                 case 1:
                     mostrarTopHechizos();
                     break;
@@ -136,10 +136,10 @@ public class MenuConsola {
                     break;
             }
             System.out.println();
-        } while (opcion != 0);
+        } while (opcion != 0);//Se reitera al menú de análisis hasta que la opción valga 0
     }
 
-    private void agregarMago() throws IOException {
+    private void agregarMago() throws IOException {//Agrega mago a Magos.txt
         String nombre = leerTexto("Nombre del mago: ");
         List<String> nombresHechizos = leerListaHechizos();
         if (sistema.agregarMago(nombre, nombresHechizos)) {
