@@ -9,7 +9,7 @@ public class HechizoAgua extends Hechizo {
     }
 
     @Override
-    public String obtenerDescripcionParametros() {
+    public String obtenerDescripcionParametros() {//Obtener Parametro último y penultimo  parámetro del HechizoAgua
         return "Cantidad heal: " + getPrimerParametro() + ", Presion agua: " + getSegundoParametro();
     }
 }
