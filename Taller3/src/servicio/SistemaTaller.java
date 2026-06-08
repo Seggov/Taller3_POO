@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import factory.HechizoFactory;
+import factory.HechizoFactory;//Importar las clases a ocupar
 import modelo.Hechizo;
 import modelo.Mago;
 import persistencia.GestorArchivos;
