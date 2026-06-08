@@ -7,7 +7,7 @@
 
 ## Descripcion del proyecto
 
-Este proyecto corresponde al Taller 3 de Programacion Avanzada.
+Este proyecto corresponde al Taller 3 de Programacion Orientada a Objetos.
 
 El sistema permite administrar magos y hechizos mediante archivos de texto. Cada mago posee uno o mas hechizos, y cada hechizo pertenece a un tipo elemental: Fuego, Tierra, Planta o Agua.
 
@@ -17,7 +17,6 @@ El programa permite calcular puntuaciones de hechizos segun su tipo y calcular l
 
 En este repositorio se suben las clases fuente del proyecto y los archivos necesarios para su ejecucion.
 
-No se incluye la carpeta `bin`, ya que esta es generada automaticamente por Eclipse al compilar el proyecto.
 
 ## Nombre recomendado del proyecto
 
