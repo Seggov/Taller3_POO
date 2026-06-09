@@ -1,4 +1,5 @@
-﻿package main;
+//Valentina Castillo y Pedro Segovia
+package main;
 
 import vista.MenuConsola;
 
